@@ -6,8 +6,10 @@ import { Contacts } from 'components/Contacts/Contacts';
 
 import { Container, Title } from './App.styled';
 
+import { selectContacts } from 'redux/selectors';
+
 export const App = () => {
-  const contacts = useSelector(state => state.contacts);
+  const contacts = useSelector(selectContacts);
 
   return (
     <Container>

@@ -2,10 +2,11 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { FilterInput, Title } from './Filter.styled';
 import { filterContact } from 'redux/phonebookSlice';
+import { selectFilter } from 'redux/selectors';
 
 export const Filter = () => {
   const dispatch = useDispatch();
-  const filter = useSelector(state => state.filter);
+  const filter = useSelector(selectFilter);
 
   const getFilter = e => {
     const value = e.target.value.toLowerCase();

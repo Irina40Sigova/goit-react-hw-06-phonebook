@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'redux/phonebookSlice';
+import { selectContacts } from 'redux/selectors';
 
 import { Formik, Field } from 'formik';
 import PropTypes from 'prop-types';
@@ -34,7 +35,7 @@ const initialValues = {
 
 export const LoginForm = () => {
   const dispatch = useDispatch();
-  const contacts = useSelector(state => state.contacts);
+  const contacts = useSelector(selectContacts);
 
   const handleSubmit = (data, actions) => {
     const isInContacts = contacts.find(
